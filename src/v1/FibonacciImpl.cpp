@@ -2,14 +2,15 @@
 #include <stdexcept>
 
 int v1::FibonacciImpl::getValue(int number) {
-	if(!isInputValid(number)) {
-		return -1;
+	if (!isInputValid(number)) {
+		return ERROR_INPUT;
 	}
 
 	try {
-		return getActualValue(number);	
-	} catch(const std::out_of_range& e) {
-		return -2;
+		return getActualValue(number);
+	}
+	catch (const std::out_of_range& e) {
+		return ERROR_COMPUTE;
 	}
 }
 

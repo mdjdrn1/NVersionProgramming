@@ -10,8 +10,8 @@ void testFibo_v1();
 void testFact_v1();
 
 int main() {
-//	testFibo_v1();
-//	testFact_v1();
+	//	testFibo_v1();
+	//	testFact_v1();
 	std::cout << VersionSelector::getResultFibonacci(3, { new v1::FibonacciImpl{}, new v1::FibonacciImpl{}, new v1::FibonacciImpl{} });
 	std::cout << VersionSelector::getResultFactorial(10, { new v1::FactorialImpl{}, new v1::FactorialImpl{}, new v1::FactorialImpl{} });
 

@@ -3,14 +3,14 @@
 
 int v1::FactorialImpl::getFactorial(int number) {
 	if (!isInputValid(number)) {
-		return -1;
+		return ERROR_INPUT;
 	}
 
 	try {
 		return getActualFactorial(number);
 	}
 	catch (const std::out_of_range& e) {
-		return -2;
+		return ERROR_COMPUTE;
 	}
 }
 

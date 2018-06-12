@@ -1,10 +1,8 @@
 #pragma once
 #include "../IFactorial.h"
 
-namespace v1 
-{
-	class FactorialImpl : public IFactorial 
-	{
+namespace v1 {
+	class FactorialImpl : public IFactorial {
 	public:
 		FactorialImpl() = default;
 		virtual ~FactorialImpl() = default;
