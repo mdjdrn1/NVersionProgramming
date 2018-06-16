@@ -14,3 +14,16 @@ namespace v1 {
 		bool isReturnTypeMaxRangeExceeded(long long result) const;
 	};
 }
+namespace v2
+{
+	class FactorialImpl : public IFactorial
+	{
+	public:
+		FactorialImpl() = default;
+		virtual ~FactorialImpl() = default;
+
+		int getFactorial(int number) override;
+	private:
+		int computeFactorial(int number) const;
+	};
+}

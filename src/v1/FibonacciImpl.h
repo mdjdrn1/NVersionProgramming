@@ -14,3 +14,16 @@ namespace v1 {
 		bool isReturnTypeMaxRangeExceeded(long long result) const;
 	};
 }
+
+namespace v2
+{
+	class FibonacciImpl : public IFibonacci {
+	public:
+		FibonacciImpl() = default;
+		virtual ~FibonacciImpl() = default;
+
+		int getValue(int number) override;
+	private:
+		int computeFibonacci(int number) const;
+	};
+}

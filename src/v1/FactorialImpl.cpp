@@ -35,3 +35,30 @@ bool v1::FactorialImpl::isInputValid(int number) const {
 bool v1::FactorialImpl::isReturnTypeMaxRangeExceeded(long long result) const {
 	return result < 0;
 }
+
+int v2::FactorialImpl::getFactorial(int number)
+{
+	try {
+		return computeFactorial(number);
+	}catch(std::invalid_argument e)
+	{
+		return ERROR_INPUT;
+	}
+	catch(std::out_of_range e)
+	{
+		return ERROR_COMPUTE;
+	}
+}
+
+int v2::FactorialImpl::computeFactorial(int number) const
+{
+	if (number < 0) throw std::invalid_argument("Wrong input number.");
+
+	int returnValue = FACTORIA_START_VALUE;
+	for (int i = FACTORIA_START_VALUE; i <= number; ++i)
+	{
+		returnValue *= i;
+	}
+	if (returnValue < 0) throw std::out_of_range("Return type max range exceeded");
+	return returnValue;
+}
