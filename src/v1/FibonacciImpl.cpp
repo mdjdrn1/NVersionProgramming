@@ -58,7 +58,7 @@ int v2::FibonacciImpl::computeFibonacci(int number) const
 
 	int parent = 0, grandParent = 1, curent = number;
 
-	for (int i = 2; i <= number; ++i)
+	for (int i = 1; i <= number; ++i)
 	{
 		curent = grandParent + parent;
 		grandParent = parent;

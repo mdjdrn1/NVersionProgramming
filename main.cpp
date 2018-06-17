@@ -16,28 +16,30 @@ constexpr int getTestedValue() {
 }
 
 int main() {
-	//testFibo_v1();
+	testFibo_v1();
 	//testFact_v1();
-	//testFibo_v2();
+	std::cout << std::endl;
+	testFibo_v2();
 	//testFact_v2();
-	//testFibo_v3();
-	//testFact_v3();
-
-	v1::FactorialImpl factorial_v1;
-	v2::FactorialImpl factorial_v2;
-	std::cout << VersionSelector::getFinalResult({
-		factorial_v1.getFactorial(getTestedValue()),
-		factorial_v2.getFactorial(getTestedValue()),
-		v3::FactorialImpl<getTestedValue()>::value
-	}) << std::endl;
-
-	v1::FibonacciImpl fibonacci_v1;
-	v2::FibonacciImpl fibonacci_v2;
-	std::cout << VersionSelector::getFinalResult({
-		fibonacci_v1.getValue(getTestedValue()),
-		fibonacci_v2.getValue(getTestedValue()),
-		v3::FibonacciImpl<getTestedValue()>::value
-	}) << std::endl;
+	std::cout << std::endl;
+	testFibo_v3();
+	// testFact_v3();
+ //
+	// v1::FactorialImpl factorial_v1;
+	// v2::FactorialImpl factorial_v2;
+	// std::cout << VersionSelector::getFinalResult({
+	// 	factorial_v1.getFactorial(getTestedValue()),
+	// 	factorial_v2.getFactorial(getTestedValue()),
+	// 	v3::FactorialImpl<getTestedValue()>::value
+	// }) << std::endl;
+ //
+	// v1::FibonacciImpl fibonacci_v1;
+	// v2::FibonacciImpl fibonacci_v2;
+	// std::cout << VersionSelector::getFinalResult({
+	// 	fibonacci_v1.getValue(getTestedValue()),
+	// 	fibonacci_v2.getValue(getTestedValue()),
+	// 	v3::FibonacciImpl<getTestedValue()>::value
+	// }) << std::endl;
 
 	getchar();
 	return 0;
@@ -78,7 +80,7 @@ void testFact_v2()
 //Testing values from -1 to 20 - can't handle range errors in this algorithm 
 void testFibo_v3()
 {
-	v3::FibonacciImplTest<-1>::test();
+	v3::FibonacciImplTest<20>::test();
 }
 
 //Testing values from -1 to 20 - can't handle range errors in this algorithm 
