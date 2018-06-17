@@ -34,16 +34,11 @@ namespace v3 {
 	{
 		enum { value = (FibonacciImpl<T - 1>::value + FibonacciImpl<T - 2>::value) };
 	};
-	template <>
-	struct FibonacciImpl<-1>
-	{
-		enum { value = ERROR_INPUT };
-	};
 
 	template <>
 	struct FibonacciImpl<0>
 	{
-		enum { value = 1 };
+		enum { value = 0 };
 	};
 
 	template <>
@@ -61,12 +56,12 @@ namespace v3 {
 	template <int T>
 	struct FibonacciImplTest {
 		static void test() {
-			std::cout << FibonacciImpl<T>::value << " ";
+			std::cout << T << " -> " << FibonacciImpl<T>::value << std::endl;
 			FibonacciImplTest<T - 1>::test();
 		}
 	};
 	template <>
-	struct FibonacciImplTest<-2> {
+	struct FibonacciImplTest<-1> {
 		static void test() {
 		}
 	};
