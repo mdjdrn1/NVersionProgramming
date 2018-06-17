@@ -1,7 +1,8 @@
 #include "FactorialImpl.h"
+#include "ErrorCodes.h"
 #include <stdexcept>
 
-int v1::FactorialImpl::getFactorial(int number) {
+int v1::FactorialImpl::getFactorial(const int number) {
 	if (!isInputValid(number)) {
 		return ERROR_INPUT;
 	}
@@ -36,7 +37,7 @@ bool v1::FactorialImpl::isReturnTypeMaxRangeExceeded(long long result) const {
 	return result < 0;
 }
 
-int v2::FactorialImpl::getFactorial(int number)
+int v2::FactorialImpl::getFactorial(const int number)
 {
 	try {
 		return computeFactorial(number);
@@ -50,7 +51,7 @@ int v2::FactorialImpl::getFactorial(int number)
 	}
 }
 
-int v2::FactorialImpl::computeFactorial(int number) const
+int v2::FactorialImpl::computeFactorial(const int number) const
 {
 	if (number < 0) throw std::invalid_argument("Wrong input number.");
 
@@ -62,3 +63,4 @@ int v2::FactorialImpl::computeFactorial(int number) const
 	if (returnValue < 0) throw std::out_of_range("Return type max range exceeded");
 	return returnValue;
 }
+
